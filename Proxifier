@@ -1,0 +1,29 @@
+Proxifier破解教程
+
+下载:http://www.onlinedown.net/soft/971579.htm
+1.安装好后打开Proxifier 软件，在“帮助”中选择“注册”选项
+2.将注册信息
+用户名：www.3322.cc
+注册码（秘钥）：（任选其一）
+5EZ8G-C3WL5-B56YG-SCXM9-6QZAP
+G3ZC7-7YGPY-FZD3A-FMNF9-ENTJB
+YTZGN-FYT53-J253L-ZQZS4-YLBN9
+输入到注册窗口中点击“确定”即可。
+
+网址教程:https://www.jianshu.com/p/57733bd964a5
+1、首先查看本地ss Socks5监听端口：
+shadowsocks 高级设置
+2、终端中操作如下命令：
+git config --global http.proxy 'socks5://127.0.0.1:1086'
+git config --global https.proxy 'socks5://127.0.0.1:1086'
+
+设置完成之后再次clone就会成功了
+
+当然前提是你有ss(你懂的)，而且在开启的前提下。
+
+3、恢复默认
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+免费ip地址
+http://www.gatherproxy.com/zh/sockslist
