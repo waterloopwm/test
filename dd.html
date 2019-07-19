@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            111
+        </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        </meta>
+    </head>
+    <body>
+        <div action="tzAllSelect" length="7" random="sscRandom">
+            <input class="code min s" type="button" rel="1" value="0"/>
+            <input class="code min d" type="button" rel="1" value="1"/>
+            <input class="code min s" type="button" rel="1" value="2"/>
+            <input class="code min d" type="button" rel="1" value="3"/>
+            <input class="code min s" type="button" rel="1" value="4"/>
+            <input class="code max d" type="button" rel="1" value="5"/>
+            <input class="code max s" type="button" rel="1" value="6"/>
+            <input class="code max d" type="button" rel="1" value="7"/>
+            <input class="code max s" type="button" rel="1" value="8"/>
+            <input class="code max d" type="button" rel="1" value="9"/>
+            <input class="action none" type="button" value="清"/>
+            <input class="action even" type="button" value="双"/>
+            <input class="action odd" type="button" value="单"/>
+            <input class="action small" type="button" value="小"/>
+            <input class="action large" type="button" value="大"/>
+        </div>
+        <div action="tzAllSelect" length="7" random="sscRandom">
+            <input class="code min s" type="button" value="0"/>
+            <input class="code min d" type="button" value="1"/>
+            <input class="code min s" type="button" value="2"/>
+            <input class="code min d" type="button" value="3"/>
+            <input class="code min s" type="button" value="4"/>
+            <input class="code max d" type="button" value="5"/>
+            <input class="code max s" type="button" value="6"/>
+            <input class="code max d" type="button" value="7"/>
+            <input class="code max s" type="button" value="8"/>
+            <input class="code max d" type="button" value="9"/>
+            <input class="action none" type="button" value="清"/>
+            <input class="action even" type="button" value="双"/>
+            <input class="action odd" type="button" value="单"/>
+            <input class="action small" type="button" value="小"/>
+            <input class="action large" type="button" value="大"/>
+        </div>
+        <input class="submit" type="button" value="submit"/>
+    </body>
+    <script src="./js/jquery-1.8.3.min.js">
+    </script>
+    <script type="text/javascript">
+		/**
+		 * 获得从m中取n的所有组合
+		 */
+		function groupSplit (arr, size) {
+		  var r = []; //result
+		  function _(t, a, n) { //tempArr, arr, num
+		    if (n === 0) {
+		      r[r.length] = t;
+		      return;
+		    }
+		    for (var i = 0, l = a.length - n; i <= l; i++) {
+		      var b = t.slice();
+		      b.push(a[i]);
+		      _(b, a.slice(i + 1), n - 1);
+		    }
+		  }
+		  _([], arr, size);
+		  //return r.length;
+          return r;
+		}
+        //双色球-红色任选10个数字
+		var a = ['01','02','03','04','05','06','07','08','09','10'];
+        //双色球-蓝色任选3个数字
+        var b=['01','02','03']
+        console.log(groupSplit(a,6));
+        //双色球-任选13个数字
+        //var a = ['01','02','03','04','05','06','07','08','09','10','11','12','13'];
+        //console.log(groupSplit(a,5));
+    </script>
+</html>
