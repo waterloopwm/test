@@ -9,16 +9,16 @@
     </head>
     <body>
         <div action="tzAllSelect" length="7" random="sscRandom">
-            <input class="code min s" type="button" rel="1" value="0"/>
-            <input class="code min d" type="button" rel="1" value="1"/>
-            <input class="code min s" type="button" rel="1" value="2"/>
-            <input class="code min d" type="button" rel="1" value="3"/>
-            <input class="code min s" type="button" rel="1" value="4"/>
-            <input class="code max d" type="button" rel="1" value="5"/>
-            <input class="code max s" type="button" rel="1" value="6"/>
-            <input class="code max d" type="button" rel="1" value="7"/>
-            <input class="code max s" type="button" rel="1" value="8"/>
-            <input class="code max d" type="button" rel="1" value="9"/>
+            <input class="code min s" rel="1" type="button" value="0"/>
+            <input class="code min d" rel="1" type="button" value="1"/>
+            <input class="code min s" rel="1" type="button" value="2"/>
+            <input class="code min d" rel="1" type="button" value="3"/>
+            <input class="code min s" rel="1" type="button" value="4"/>
+            <input class="code max d" rel="1" type="button" value="5"/>
+            <input class="code max s" rel="1" type="button" value="6"/>
+            <input class="code max d" rel="1" type="button" value="7"/>
+            <input class="code max s" rel="1" type="button" value="8"/>
+            <input class="code max d" rel="1" type="button" value="9"/>
             <input class="action none" type="button" value="清"/>
             <input class="action even" type="button" value="双"/>
             <input class="action odd" type="button" value="单"/>
@@ -47,35 +47,319 @@
     <script src="./js/jquery-1.8.3.min.js">
     </script>
     <script type="text/javascript">
-		/**
-		 * 获得从m中取n的所有组合
-		 */
-		function groupSplit (arr, size) {
-		  var r = []; //result
-		  function _(t, a, n) { //tempArr, arr, num
-		    if (n === 0) {
-		      r[r.length] = t;
-		      return;
-		    }
-		    for (var i = 0, l = a.length - n; i <= l; i++) {
-		      var b = t.slice();
-		      b.push(a[i]);
-		      _(b, a.slice(i + 1), n - 1);
-		    }
-		  }
-		  _([], arr, size);
-		  return r.length;
+        /**
+         * 获得从m中取n的所有组合
+         */
+        function groupSplit (arr, size) {
+          var r = []; //result
+          function _(t, a, n) { //tempArr, arr, num
+            if (n === 0) {
+              r[r.length] = t;
+              return;
+            }
+            for (var i = 0, l = a.length - n; i <= l; i++) {
+              var b = t.slice();
+              b.push(a[i]);
+              _(b, a.slice(i + 1), n - 1);
+            }
+          }
+          _([], arr, size);
+          return r.length;
           //return r;
-		}
+        }
         
 
-		//var a = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35'];
+        //var a = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35'];
         //var a = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35'];
         var a = ['01','02','03','04','05','06'];
         console.log(groupSplit(a,5));
         //双色球-任选13个数字
         //var a = ['01','02','03','04','05','06','07','08','09','10','11','12','13'];
         //console.log(groupSplit(a,5));
+
+        function GetDltRedZhu(redNum){
+            switch (redNum) {
+                case 5:
+                    zhu = 1;
+                    break;
+                case 6:
+                    zhu = 6;
+                     break;
+                case 7:
+                    zhu = 21;
+                     break;
+                case 8:
+                    zhu = 56;
+                     break;
+                case 9:
+                    zhu = 126;
+                     break;
+                case 10:
+                    zhu = 252;
+                     break;
+                case 11:
+                    zhu = 462;
+                    break;
+                case 12:
+                    zhu = 792;
+                    break;
+                case 13:
+                    zhu = 1287;
+                    break;
+                case 14:
+                    zhu = 2002;
+                    break;
+                case 15:
+                    zhu = 3003;
+                    break;
+                case 16:
+                    zhu = 4368;
+                    break;
+                case 17:
+                    zhu = 6188;
+                    break;
+                case 18:
+                    zhu = 8568;
+                    break;
+                case 19:
+                    zhu = 11628;
+                    break;
+                case 20:
+                    zhu = 15504;
+                    break;
+                case 21:
+                    zhu = 20349;
+                    break;
+                case 22:
+                    zhu = 26334;
+                    break;
+                case 23:
+                    zhu = 33649;
+                    break;
+                case 24:
+                    zhu = 42504;
+                    break;
+                case 25:
+                    zhu = 53130;
+                    break;
+                case 26:
+                    zhu = 65780;
+                    break;
+                case 27:
+                    zhu = 80730;
+                    break;
+                case 28:
+                    zhu = 98280;
+                    break;
+                case 29:
+                    zhu = 118755;
+                    break;
+                case 30:
+                    zhu = 142506;
+                    break;
+                case 31:
+                    zhu = 169911;
+                    break;
+                case 32:
+                    zhu = 201376;
+                    break;
+                case 33:
+                    zhu = 237336;
+                    break;
+                case 34:
+                    zhu = 278256;
+                    break;
+                case 35:
+                    zhu = 324632;
+                    break;
+            } 
+            return 
+        }
+
+        function GetDltBlueZhu(blueNum){
+            switch (redNum) {
+                case 2:
+                    zhu = 1;
+                    break;
+                case 3:
+                    zhu = 3;
+                    break;
+                case 4:
+                    zhu = 6;
+                    break;
+                case 5:
+                    zhu = 10;
+                    break;
+                case 6:
+                    zhu = 15;
+                     break;
+                case 7:
+                    zhu = 21;
+                     break;
+                case 8:
+                    zhu = 28;
+                     break;
+                case 9:
+                    zhu = 36;
+                     break;
+                case 10:
+                    zhu = 45;
+                     break;
+                case 11:
+                    zhu = 55;
+                    break;
+                case 12:
+                    zhu = 66;
+                    break;
+            } 
+            return 
+        }
+        //大乐透 GetDltRedZhu(redNum)*GetDltRedZhu(blueNum)
+
+        function GetSsqRedZhu(redNum){
+            switch (redNum) {
+                case 6:
+                    zhu = 1;
+                     break;
+                case 7:
+                    zhu = 7;
+                     break;
+                case 8:
+                    zhu = 28;
+                     break;
+                case 9:
+                    zhu = 84;
+                     break;
+                case 10:
+                    zhu = 210;
+                     break;
+                case 11:
+                    zhu = 462;
+                    break;
+                case 12:
+                    zhu = 924;
+                    break;
+                case 13:
+                    zhu = 1716;
+                    break;
+                case 14:
+                    zhu = 3003;
+                    break;
+                case 15:
+                    zhu = 5005;
+                    break;
+                case 16:
+                    zhu = 8008;
+                    break;
+                case 17:
+                    zhu = 12376;
+                    break;
+                case 18:
+                    zhu = 18564;
+                    break;
+                case 19:
+                    zhu = 27132;
+                    break;
+                case 20:
+                    zhu = 38760;
+                    break;
+                case 21:
+                    zhu = 54264;
+                    break;
+                case 22:
+                    zhu = 74613;
+                    break;
+                case 23:
+                    zhu = 100947;
+                    break;
+                case 24:
+                    zhu = 134596;
+                    break;
+                case 25:
+                    zhu = 177100;
+                    break;
+                case 26:
+                    zhu = 230230;
+                    break;
+                case 27:
+                    zhu = 296010;
+                    break;
+                case 28:
+                    zhu = 376740;
+                    break;
+                case 29:
+                    zhu = 475020;
+                    break;
+                case 30:
+                    zhu = 593775;
+                    break;
+                case 31:
+                    zhu = 736281;
+                    break;
+                case 32:
+                    zhu = 906192;
+                    break;
+                case 33:
+                    zhu = 1107568;
+                    break;
+            }
+            return 
+        }
+
+        function GetSsqBlueZhu(blueNum){
+            switch (redNum) {
+                case 1:
+                    zhu = 1;
+                    break;
+                case 2:
+                    zhu = 2;
+                    break;
+                case 3:
+                    zhu = 3;
+                    break;
+                case 4:
+                    zhu = 4;
+                    break;
+                case 5:
+                    zhu = 5;
+                    break;
+                case 6:
+                    zhu = 6;
+                     break;
+                case 7:
+                    zhu = 7;
+                     break;
+                case 8:
+                    zhu = 8;
+                     break;
+                case 9:
+                    zhu = 9;
+                     break;
+                case 10:
+                    zhu = 10;
+                     break;
+                case 11:
+                    zhu = 11;
+                    break;
+                case 12:
+                    zhu = 12;
+                    break;
+                case 13:
+                    zhu = 13;
+                    break;
+                case 14:
+                    zhu = 14;
+                    break;
+                case 15:
+                    zhu = 15;
+                    break;
+                case 16:
+                    zhu = 16;
+                    break;
+            } 
+            return 
+        }
+        //双色球 GetSsqRedZhu(redNum)*GetSsqRedZhu(blueNum)
 
         //大乐透红球多少号码注数
         //红球选中个数
@@ -91,7 +375,7 @@
         //红球选中个数
         var red=[6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33];
         //组合出的注数
-        var zhu=[1,7,28,84,210,462,924,1716,3003,5005,8008,12376,18564,27132,38760,54264,74613,100947,134596,177100,230230,296010,376740,475020,593775,736281,906192,1812384]
+        var zhu=[1,7,28,84,210,462,924,1716,3003,5005,8008,12376,18564,27132,38760,54264,74613,100947,134596,177100,230230,296010,376740,475020,593775,736281,906192,1107568]
         //蓝球选中个数
         var blue=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
         //组合出的注数
