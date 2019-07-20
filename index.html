@@ -9,21 +9,22 @@
     </head>
     <body>
         <div action="tzAllSelect" length="7" random="sscRandom">
-            <input class="code min s" type="button" rel="1" value="0"/>
-            <input class="code min d" type="button" rel="1" value="1"/>
-            <input class="code min s" type="button" rel="1" value="2"/>
-            <input class="code min d" type="button" rel="1" value="3"/>
-            <input class="code min s" type="button" rel="1" value="4"/>
-            <input class="code max d" type="button" rel="1" value="5"/>
-            <input class="code max s" type="button" rel="1" value="6"/>
-            <input class="code max d" type="button" rel="1" value="7"/>
-            <input class="code max s" type="button" rel="1" value="8"/>
-            <input class="code max d" type="button" rel="1" value="9"/>
+            <input class="code min s" type="button"  value="0"/>
+            <input class="code min d" type="button"  value="1"/>
+            <input class="code min s" type="button"  value="2"/>
+            <input class="code min d" type="button"  value="3"/>
+            <input class="code min s" type="button"  value="4"/>
+            <input class="code max d" type="button"  value="5"/>
+            <input class="code max s" type="button"  value="6"/>
+            <input class="code max d" type="button"  value="7"/>
+            <input class="code max s" type="button"  value="8"/>
+            <input class="code max d" type="button"  value="9"/>
             <input class="action none" type="button" value="清"/>
             <input class="action even" type="button" value="双"/>
             <input class="action odd" type="button" value="单"/>
             <input class="action small" type="button" value="小"/>
             <input class="action large" type="button" value="大"/>
+            <input type="button" value="全"  class="action all" />
         </div>
         <div action="tzAllSelect" length="7" random="sscRandom">
             <input class="code min s" type="button" value="0"/>
@@ -41,6 +42,7 @@
             <input class="action odd" type="button" value="单"/>
             <input class="action small" type="button" value="小"/>
             <input class="action large" type="button" value="大"/>
+            <input type="button" value="全"  class="action all" />
         </div>
         <div action="tzAllSelect" length="7" random="sscRandom">
             <input class="code min s" type="button" value="0"/>
@@ -58,6 +60,7 @@
             <input class="action odd" type="button" value="单"/>
             <input class="action small" type="button" value="小"/>
             <input class="action large" type="button" value="大"/>
+            <input type="button" value="全"  class="action all" />
         </div>
         <div action="tzAllSelect" length="7" random="sscRandom">
             <input class="code min s" type="button" value="0"/>
@@ -75,6 +78,7 @@
             <input class="action odd" type="button" value="单"/>
             <input class="action small" type="button" value="小"/>
             <input class="action large" type="button" value="大"/>
+            <input type="button" value="全"  class="action all" />
         </div>
         <div action="tzAllSelect" length="7" random="sscRandom">
             <input class="code min s" type="button" value="0"/>
@@ -92,6 +96,7 @@
             <input class="action odd" type="button" value="单"/>
             <input class="action small" type="button" value="小"/>
             <input class="action large" type="button" value="大"/>
+            <input type="button" value="全"  class="action all" />
         </div>
         <div action="tzAllSelect" length="7" random="sscRandom">
             <input class="code min s" type="button" value="0"/>
@@ -109,6 +114,7 @@
             <input class="action odd" type="button" value="单"/>
             <input class="action small" type="button" value="小"/>
             <input class="action large" type="button" value="大"/>
+            <input type="button" value="全"  class="action all" />
         </div>
         <div action="tzAllSelect" length="7" random="sscRandom">
             <input class="code min s" type="button" value="0"/>
@@ -126,6 +132,7 @@
             <input class="action odd" type="button" value="单"/>
             <input class="action small" type="button" value="小"/>
             <input class="action large" type="button" value="大"/>
+            <input type="button" value="全"  class="action all" />
         </div>
         <input class="submit" type="button" value="submit"/>
     </body>
@@ -190,10 +197,6 @@
 					alert('请选'+codeLen+'位数字');
 					//return false;
 				}
-				if($("input[rel='1'][checked]").length>5){
-					alert('第一位,最多选择5位数字');
-					return false;
-				} 
 				$("div[action='tzAllSelect']").each(function(i){
 					var $code=$('input.code.checked', this);
 					if($code.length==0){
@@ -207,8 +210,8 @@
 						code[i]=code[i].join(delimiter);
 					}
 				});
-				//alert(code);
-				//alert(len);
+				alert(code);
+				alert(len);
 				//return {actionData:code.join(','), actionNum:len};
 			})
 		})
