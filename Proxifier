@@ -27,3 +27,7 @@ git config --global --unset https.proxy
 
 免费ip地址
 http://www.gatherproxy.com/zh/sockslist
+
+redis启动
+cd C:\Program Files\Redis
+redis-server.exe redis.windows.conf
