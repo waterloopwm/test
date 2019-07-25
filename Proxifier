@@ -36,3 +36,27 @@ redis-server.exe redis.windows.conf
 --------------------------------------------------------------------------
 另一个redis管理工具
 Another.Redis.Desktop.Manager
+--------------------------------------------------------------------------
+https://github.com/9raxdev/think-workerman
+composer.json
+{
+    "require": {
+        "workerman/workerman": "*",
+        "workerman/gateway-worker":"*",
+        "workerman/gatewayclient":"*",
+        "topthink/think-orm":"*",
+        "topthink/think-cache":"*", 
+        "topthink/think-log":"*",
+    },
+    "autoload":{
+        "psr-4":{
+            "utils\\":"core/utils/"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
